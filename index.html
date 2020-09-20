@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -26,11 +26,13 @@
             <div class="col-3">
                 <p class="m-2" style="font-weight: bold">Search for a city:</p>
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Enter City" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    <input id="cityInput" type="text" class="form-control" placeholder="Enter City" aria-label="Enter City" aria-describedby="Enter City for Search">
                     <div class="input-group-append">
-                      <button class="btn btn-outline-secondary" type="button"><i class="fas fa-search"></i></button>
+                      <button class="btn btn-outline-secondary" type="button" id="searchBtn"><i class="fas fa-search"></i></button>
                     </div>
                   </div>
+                  <p class="m-2">Search history:</p>
+                  <div id="buttonDiv"></div>
             </div>
             
             <div class="col">
@@ -112,9 +114,11 @@
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="script.js"></script>
+   
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    </body>
 </html>
