@@ -5,18 +5,17 @@ $(document).ready(function(){
 
     $("#searchBtn").on('click', function(){
 
-        var city = $("#cityInput").val();
+        city = $("#cityInput").val();
         console.log(city);
         var addButton = document.createElement('button');
         addButton.setAttribute('class', 'savehistory btn btn btn-secondary m-1 custom');
         addButton.textContent = city ;
         $(".buttonDiv").append(addButton);
-        //$(".buttonDiv").append("<button>"+city+"</button><br>");
         startQuery();
     });
 
     $(".buttonDiv").on('click', "button.savehistory", function(){
-        var city = $(this).text();
+        city = $(this).text();
         console.log(city);
         startQuery();
     })
@@ -24,8 +23,7 @@ $(document).ready(function(){
     function startQuery(){
 
 
-        var queryurl = "api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=4c47461c514bba9e1bbc913bffac4116";
-        console.log(city);
+        var queryurl = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=4c47461c514bba9e1bbc913bffac4116";
     
         $.ajax({
             url: queryurl,
@@ -39,6 +37,13 @@ $(document).ready(function(){
                 console.log(response);
                 });
 
-    };
+        //City name
+       //var cityName = reponse.city.name;
+        // console.log(cityName);
+       //var currentdaytemp = response.list[0[0].main.temp] - 273.15;
+       //console.log(currentdaytemp);
+       //var forecastday1 =
+
+    }; 
         
 }); 
