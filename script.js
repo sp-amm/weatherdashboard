@@ -23,7 +23,7 @@ $(document).ready(function(){
     function startQuery(){
 
 
-        var queryurl = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=4c47461c514bba9e1bbc913bffac4116";
+        var queryurl = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=metric&cnt=5&appid=4c47461c514bba9e1bbc913bffac4116";
     
         $.ajax({
             url: queryurl,
@@ -35,13 +35,19 @@ $(document).ready(function(){
 
             }).then(function(response) {
                 console.log(response);
-                });
+                var date = new Date(response.list[0].dt*1000);
+                $("#city").text(response.city.name + date);
+                $("#currentdaytemp").text("Temperature: " + response.list[0].main.temp + " °C");
+                $("#currentdayhumidity").text("Humidity: " + response.list[0].main.humidity + "%");
+                $("#currentdaywind").text("Wind Speed: " + response.list[0].wind.speed + "Kmph");
+                //$("#currentdayuv").text("UV Index: " + response.list[0].main.temp);
+            });
 
-        //City name
+     
        //var cityName = reponse.city.name;
         // console.log(cityName);
-       //var currentdaytemp = response.list[0[0].main.temp] - 273.15;
-       //console.log(currentdaytemp);
+       //var currentdaytemp = response;
+       
        //var forecastday1 =
 
     }; 
