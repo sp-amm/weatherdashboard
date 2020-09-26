@@ -1,26 +1,19 @@
 Weather Dashboard
 
-This weather dashboard utilises the openweathermap api (https://openweathermap.org/api). It makes two seperate calls to the API for
+Homework #6 Server side apis.
+
+This weather dashboard uses the openweathermap api (https://openweathermap.org/api). It makes two seperate calls to the API for
 current data and for the seven day forecast. The seven day forecast call uses longitude and latitude data from the current forecast 
 call. The Dashboard allows the user to search for the weather for a particular city. City input is incorporated into the query url 
 for the api. Search history is displayed in buttons that can be pressed to search again. The Dashboard shows today's weather and provides
 a 5-day forecast.
 
+<img src=Assets/Capture1.JPG>
+<img src=Assets/Capture2.JPG>
 
-
-# 06 Server-Side APIs: Weather Dashboard
-
-Developers are often tasked with retrieving data from another application's API and using it in the context of their own. Third-party APIs allow developers to access their data and functionality by making requests with specific parameters to a URL. Your challenge is to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.
-
-Use the [OpenWeather API](https://openweathermap.org/api) to retrieve weather data for cities. The documentation includes a section called "How to start" that will provide basic setup and usage instructions. Use `localStorage` to store any persistent data.
-
-## User Story
-
-```
-AS A traveler
-I WANT to see the weather outlook for multiple cities
-SO THAT I can plan a trip accordingly
-```
+_____________________________
+Homework Acceptance Criteria:
+_____________________________
 
 ## Acceptance Criteria
 
@@ -40,17 +33,5 @@ WHEN I open the weather dashboard
 THEN I am presented with the last searched city forecast
 ```
 
-The following image demonstrates the application functionality:
 
-![weather dashboard demo](./Assets/06-server-side-apis-homework-demo.png)
 
-## Review
-
-You are required to submit the following for review:
-
-* The URL of the deployed application.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
-
-- - -
-© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.

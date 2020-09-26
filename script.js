@@ -1,14 +1,15 @@
 $(document).ready(function(){
 
-    //Page looks better if there is data in it from the start
+    //Loads Adelaide's weather on opening because it looks better
     var city ="Adelaide";
     startQuery();
-
-
+    
+    var searchCount = 0
+    
+    //Search function and button and create button functions
     $("#searchBtn").on('click', function(){
 
         city = $("#cityInput").val();
-        console.log(city);
         var addButton = document.createElement('button');
         addButton.setAttribute('class', 'savehistory btn btn-secondary m-1 btn-block');
         addButton.textContent = city ;
@@ -22,12 +23,8 @@ $(document).ready(function(){
         startQuery();
     })
 
+    //function to call the data from the api
     function startQuery(){
-
-
-       // var queryurl = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=metric&appid=4c47461c514bba9e1bbc913bffac4116";
-    
-        //var queryurl = "http://api.openweathermap.org/data/2.5/forecast/daily?q=" + city + "&cnt=5&appid=4c47461c514bba9e1bbc913bffac4116";
     
         var currentqueryUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&appid=4c47461c514bba9e1bbc913bffac4116";
         
@@ -35,15 +32,9 @@ $(document).ready(function(){
             url: currentqueryUrl,
             type: "GET",
         
-            //success: function(){},
-            //error: function(){ 
-               // alert("We are unable to process your search right now. Try again later.");},
         }).then(function(response){
-            console.log(response);
             var lat = response.coord.lat;
-            console.log(lat);
             var lon = response.coord.lon;
-            console.log(lon);
 
             $("#city").text("Today in " + response.name);
             $("#currentdaytemp").text("Temperature: " + response.main.temp + " °C")
@@ -53,7 +44,7 @@ $(document).ready(function(){
             $("#currentdayimg").html("<img src=" + currentdaylogoUrl + ">")
             
         
-
+                //Second API call for the five day forecast using the lat lon data from the first call
                 var forecastqueryUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&units=metric&exclude=current,minutely,hourly,alerts&appid=4c47461c514bba9e1bbc913bffac4116"
                 
                 $.ajax({
@@ -61,15 +52,11 @@ $(document).ready(function(){
                     type: "GET",
 
                     }).then(function(response) {
-
-                        console.log(response);
-                        console.log(response.daily.length);
-                        console.log(response.daily[1].weather[0].icon)
-                        console.log(response.daily[1].humidity)
                         
+                        //Loop to go through the api daily weather array for the 5 day forecast data
                         for (var i = 0; i < 5; i++)  {
                             
-                        //Code to get the dat into dd/mm/yyyy format - referenced from Ore4444 at https://stackoverflow.com/questions/11591854/format-date-to-mm-dd-yyyy-in-javascript?lq=1 
+                        //To get the date into dd/mm/yyyy format - referenced from Ore4444 at https://stackoverflow.com/questions/11591854/format-date-to-mm-dd-yyyy-in-javascript?lq=1 
                         var date = new Date(response.daily[i].dt*1000);
                         var day = date.getDate();
                         var month = date.getMonth()+1;
