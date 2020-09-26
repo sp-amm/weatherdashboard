@@ -1,3 +1,13 @@
+Weather Dashboard
+
+This weather dashboard utilises the openweathermap api (https://openweathermap.org/api). It makes two seperate calls to the API for
+current data and for the seven day forecast. The seven day forecast call uses longitude and latitude data from the current forecast 
+call. The Dashboard allows the user to search for the weather for a particular city. City input is incorporated into the query url 
+for the api. Search history is displayed in buttons that can be pressed to search again. The Dashboard shows today's weather and provides
+a 5-day forecast.
+
+
+
 # 06 Server-Side APIs: Weather Dashboard
 
 Developers are often tasked with retrieving data from another application's API and using it in the context of their own. Third-party APIs allow developers to access their data and functionality by making requests with specific parameters to a URL. Your challenge is to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.

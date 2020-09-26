@@ -1,0 +1,9 @@
+.background-image { background-image: url(./Assets/background.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;}
+
+.card {
+    min-width: 400px;
+}
