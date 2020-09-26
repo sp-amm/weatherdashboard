@@ -2,8 +2,34 @@
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-position: center;}
-
-.card {
-    min-width: 400px;
+    background-position: center;
 }
+
+.galaxyback {
+    background-image: url(./Assets/galaxyback.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.shadow {
+    border-radius: 25px;
+    box-shadow: 0px 0px 10px 0px #000000;
+}
+
+.leftdiv {
+    float: left;
+}
+
+.rightdiv {
+    float: left;
+    background-color: rgb(36, 36, 43);
+    border-radius: 25px;
+}
+
+@media (max-width: 600px) {
+    .rightdiv{
+        display:none;
+    }
+    }
