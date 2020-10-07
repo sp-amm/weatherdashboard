@@ -26,7 +26,7 @@ $(document).ready(function(){
     //function to call the data from the api
     function startQuery(){
     
-        var currentqueryUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&appid=4c47461c514bba9e1bbc913bffac4116";
+        var currentqueryUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&appid=4c47461c514bba9e1bbc913bffac4116";
         
         $.ajax({
             url: currentqueryUrl,
